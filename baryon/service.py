@@ -8,11 +8,11 @@ class WSGIService(object):
         self.wsgi_app = None
 
     def start(self):
-        wsgi.WSGILoader().load_app(self.app_name)
-
-
-    def create(self):
-        pass
+        self.app = wsgi.WSGILoader().load_app(self.app_name)
+        self.host = "0.0.0.0"
+        self.port = "20000"
+        self.server = wsgi.Server()
+        self.server.start(app,)
 
     def wait(self):
         self.wsgi_app.wait()

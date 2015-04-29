@@ -1,17 +1,30 @@
 from paste import deploy
 
-class WSGILoader(object):
 
-    def load_app(self, name):
-        return deploy.loadapp("config:")
+class WorkerProvider(object):
 
-
-
-class ServerProcessor(object):
-
-    def __init__(self):
-        print 'setup server config'
-        print 'eventlet listen'
+    def __init__(self,app,service):
+        self._service = service
+        self._app = app
+        self._server = None
 
     def start(self):
-        print 'eventlet start'
+        print "get socket"
+        print "launch process (eventlet.wsgi.server,spawn)..."
+
+    def wait(self):
+        print "_service wait"
+
+    def stop(self):
+        print "kill service"
+
+
+class Server(object):
+
+    def __init__(self, name,app):
+        self.name = name
+        self.service = None
+        self.app = app
+
+    def start(self):
+       service = WorkerProvider(self, self.app)
