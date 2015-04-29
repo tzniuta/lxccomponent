@@ -1,6 +1,7 @@
 from baryon.openstack.common import service
 from baryon import wsgi
 
+
 class WSGIService(object):
 
     def __init__(self,app_name):
@@ -8,11 +9,11 @@ class WSGIService(object):
         self.wsgi_app = None
 
     def start(self):
-        self.app = wsgi.WSGILoader().load_app(self.app_name)
-        self.host = "0.0.0.0"
-        self.port = "20000"
-        self.server = wsgi.Server()
-        self.server.start(app,)
+        self.wsgi_app = wsgi.WSGILoader().load_app(self.app_name)
+        # host = "0.0.0.0"
+        # port = "20000"
+        # server = wsgi.Server(self.app_name, self.wsgi_app)
+        # server.start()
 
     def wait(self):
         self.wsgi_app.wait()
@@ -21,13 +22,8 @@ class WSGIService(object):
 class WSGIServiceFactory(WSGIService):
 
     @classmethod
-    def create(cls, app_name):
+    def getinstance(cls, app_name):
         return cls(app_name)
-
-
-
-
-
 
 
 def process_launcher():

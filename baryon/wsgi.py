@@ -37,8 +37,8 @@ class WorkerProvider(object):
 class Server(object):
 
     def __init__(self, name, app):
-
-        self._worker = WorkerProvider(self, self.app)
+        self.name = name
+        self._worker = WorkerProvider(self, app)
 
     def start(self):
        self._worker.start()
