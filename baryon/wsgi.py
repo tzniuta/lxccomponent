@@ -25,7 +25,7 @@ class WorkerProvider(object):
             self._app
         )
         print "get socket"
-        print "launch process (eventlet.wsgi.server,spawn)..."
+        print "launch process (eventlet.wsgi.serve r,spawn)..."
 
     def wait(self):
         print "_service wait"
