@@ -48,3 +48,4 @@ class Server(object):
 
     def wait(self):
         self._worker.wait()
+
