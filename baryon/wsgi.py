@@ -3,11 +3,13 @@
 import eventlet
 import eventlet.wsgi
 import socket
+import os
 
 from paste import deploy
 from baryon.openstack.common import log as logging
 from oslo.config import cfg
 
+LOG = logging.getLogger(__name__)
 
 wsgi_opts = [
     cfg.StrOpt('wsgi_log_format',
@@ -26,13 +28,13 @@ wsgi_opts = [
     cfg.BoolOpt('wsgi_keep_alive',
                 default=True,
                 help="If False, closes the client socket connection "
-                     "explicitly.")
+                     "explicitly."),
+    cfg.StrOpt('api_paste_config', default="api-paste.ini",
+                help="The API paste config file to use")
 ]
 
 CONF = cfg.CONF
 CONF.register_opts(wsgi_opts)
-
-LOG = logging.getLogger(__name__)
 
 
 class EventletProvider(object):
@@ -120,8 +122,10 @@ class Server(object):
 class PasteProvider(object):
 
     def __init__(self, name):
-        #TODO: change config path to relative
-        self._config_path = "api-paste.ini"
+        config_path = cfg.CONF.find_file(cfg.CONF.api_paste_config)
+        #TODO: change it to relative path
+        config_path = "/home/stack/dev/workspace/lxccomponent/etc/baryon/api-paste.ini"
+        self._config_path = config_path
         self._name = name
 
     def load(self):
