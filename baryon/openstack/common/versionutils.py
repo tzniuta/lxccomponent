@@ -126,7 +126,7 @@ class deprecated(object):
         return wrapped
 
     def _get_safe_to_remove_release(self, release):
-        # TODO(dstanek): this method will have to be reimplemented once
+        # T ODO(dstanek): this method will have to be reimplemented once
         #    when we get to the X release because once we get to the Y
         #    release, what is Y+2?
         new_release = chr(ord(release) + self.remove_in)

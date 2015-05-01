@@ -33,7 +33,7 @@ import six
 
 _AVAILABLE_LANGUAGES = {}
 
-# FIXME(dhellmann): Remove this when moving to oslo.i18n.
+# F IXME(dhellmann): Remove this when moving to oslo.i18n.
 USE_LAZY = False
 
 
@@ -121,7 +121,7 @@ class TranslatorFactory(object):
 # module within each application.
 
 # Create the global translation functions.
-_translators = TranslatorFactory('nova')
+_translators = TranslatorFactory('baryon')
 
 # The primary translation function using the well-known name "_"
 _ = _translators.primary

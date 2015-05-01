@@ -3,11 +3,11 @@
 import eventlet
 import eventlet.wsgi
 import socket
-import os
 
 from paste import deploy
 from baryon.openstack.common import log as logging
 from oslo.config import cfg
+from baryon.common import exception
 
 LOG = logging.getLogger(__name__)
 
@@ -28,9 +28,7 @@ wsgi_opts = [
     cfg.BoolOpt('wsgi_keep_alive',
                 default=True,
                 help="If False, closes the client socket connection "
-                     "explicitly."),
-    cfg.StrOpt('api_paste_config', default="api-paste.ini",
-                help="The API paste config file to use")
+                     "explicitly.")
 ]
 
 CONF = cfg.CONF
@@ -54,11 +52,14 @@ class EventletProvider(object):
         self._wsgi_log_format = CONF.wsgi_log_format
         self._wsgi_keep_alive = CONF.wsgi_keep_alive
 
+        self._bind_ip = CONF.bind_host
+        self._port = CONF.bind_port
+
         self._set_server()
 
     def _set_server(self):
-        host = "0.0.0.0"
-        port = 30000
+        host = self._bind_ip
+        port = self._port
         bind_addr = (host, port)
 
         info = socket.getaddrinfo(bind_addr[0], bind_addr[1], socket.AF_UNSPEC, socket.SOCK_STREAM)[0]
@@ -123,13 +124,14 @@ class PasteProvider(object):
 
     def __init__(self, name):
         config_path = cfg.CONF.find_file(cfg.CONF.api_paste_config)
-        #TODO: change it to relative path
-        config_path = "/home/stack/dev/workspace/lxccomponent/etc/baryon/api-paste.ini"
+        config_path = None
+        if not config_path:
+            raise exception.ConfigNotFound()
         self._config_path = config_path
         self._name = name
 
     def load(self):
-        #TODO: exception handling with "try catch"
+        # TODO: exception handling with "try catch"
         return deploy.loadapp("config:%s" % self._config_path, name=self._name)
 
     @classmethod

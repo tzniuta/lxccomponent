@@ -875,7 +875,7 @@ class GenericCheck(Check):
             'Member':%(role.name)s
         """
 
-        # TODO(termie): do dict inspection via dot syntax
+        # T ODO(termie): do dict inspection via dot syntax
         try:
             match = self.match % target
         except KeyError:

@@ -118,7 +118,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if type(value) == itertools.count:
         return six.text_type(value)
 
-    # FIXME(vish): Workaround for LP bug 852095. Without this workaround,
+    # F IXME(vish): Workaround for LP bug 852095. Without this workaround,
     #              tests that raise an exception in a mocked method that
     #              has a @wrap_exception with a notifier will fail. If
     #              we up the dependency to 0.5.4 (when it is released) we

@@ -1,11 +1,9 @@
 # Copyright 2015 Cha Dong-Hwi
 
 import sys
-from oslo.config import cfg
+
 from baryon import service
 from baryon.common import config
-
-CONF = cfg.CONF
 
 
 def main():

@@ -134,7 +134,7 @@ class QemuImgInfo(object):
         # and then handle the results of those 'top level' items in a separate
         # function.
         #
-        # TODO(harlowja): newer versions might have a json output format
+        # T ODO(harlowja): newer versions might have a json output format
         #                 we should switch to that whenever possible.
         #                 see: http://bit.ly/XLJXDX
         contents = {}
