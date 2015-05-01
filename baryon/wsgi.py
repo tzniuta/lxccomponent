@@ -124,7 +124,6 @@ class PasteProvider(object):
 
     def __init__(self, name):
         config_path = cfg.CONF.find_file(cfg.CONF.api_paste_config)
-        config_path = None
         if not config_path:
             raise exception.ConfigNotFound()
         self._config_path = config_path

@@ -6,7 +6,7 @@ from baryon import wsgi
 
 class WSGIService(object):
 
-    def __init__(self,app_name):
+    def __init__(self, app_name):
         self.app_name = app_name
         self.server = wsgi.Server(self.app_name)
 
