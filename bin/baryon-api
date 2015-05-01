@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # PBR Generated from u'console_scripts'
 
+# Copyright 2015 Cha Dong-Hwi
+
+
 import sys
 
 from baryon.cmd.api import main

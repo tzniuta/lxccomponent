@@ -1,3 +1,5 @@
+# Copyright 2015 Cha Dong-Hwi
+
 import eventlet
 import eventlet.wsgi
 import socket
@@ -119,7 +121,7 @@ class PasteProvider(object):
 
     def __init__(self, name):
         #TODO: change config path to relative
-        self._config_path = "/home/stack/dev/workspace/lxccomponent/etc/baryon/api-paste.ini"
+        self._config_path = "api-paste.ini"
         self._name = name
 
     def load(self):

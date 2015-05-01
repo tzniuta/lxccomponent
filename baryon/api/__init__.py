@@ -1,3 +1,5 @@
+# Copyright 2015 Cha Dong-Hwi
+
 from webob import Response
 from webob.dec import wsgify
 

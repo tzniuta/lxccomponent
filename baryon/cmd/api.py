@@ -1,3 +1,5 @@
+# Copyright 2015 Cha Dong-Hwi
+
 import sys
 from oslo.config import cfg
 from baryon import service
