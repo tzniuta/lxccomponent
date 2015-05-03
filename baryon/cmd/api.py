@@ -2,7 +2,7 @@
 
 import sys
 
-from baryon import service
+from baryon.core import service
 from baryon.common import config
 
 

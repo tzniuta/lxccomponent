@@ -66,6 +66,7 @@ class EventletProvider(object):
 
         family = info[0]
         self._socket = eventlet.listen(bind_addr, family, backlog=128)
+        # TODO: wrap socket for the case when ssl is used
 
     def start(self):
         dup_socket = self._socket.dup()
