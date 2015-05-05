@@ -21,8 +21,8 @@ Helper methods to deal with images.
 
 import re
 
-from nova.openstack.common.gettextutils import _
-from nova.openstack.common import strutils
+from baryon.openstack.common.gettextutils import _
+from baryon.openstack.common import strutils
 
 
 class QemuImgInfo(object):

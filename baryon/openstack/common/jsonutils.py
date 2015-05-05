@@ -59,10 +59,10 @@ else:
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
-from nova.openstack.common import gettextutils
-from nova.openstack.common import importutils
-from nova.openstack.common import strutils
-from nova.openstack.common import timeutils
+from baryon.openstack.common import gettextutils
+from baryon.openstack.common import importutils
+from baryon.openstack.common import strutils
+from baryon.openstack.common import timeutils
 
 netaddr = importutils.try_import("netaddr")
 

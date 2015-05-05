@@ -21,8 +21,8 @@ import time
 from eventlet import event
 from eventlet import greenthread
 
-from nova.openstack.common.gettextutils import _LE, _LW
-from nova.openstack.common import log as logging
+from baryon.openstack.common.gettextutils import _LE, _LW
+from baryon.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 

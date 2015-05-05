@@ -24,7 +24,7 @@ import traceback
 
 import six
 
-from nova.openstack.common.gettextutils import _LE
+from baryon.openstack.common.gettextutils import _LE
 
 
 class save_and_reraise_exception(object):

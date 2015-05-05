@@ -37,15 +37,15 @@ import eventlet
 from eventlet import event
 from oslo.config import cfg
 
-from nova.openstack.common import eventlet_backdoor
-from nova.openstack.common.gettextutils import _LE, _LI, _LW
-from nova.openstack.common import importutils
-from nova.openstack.common import log as logging
-from nova.openstack.common import systemd
-from nova.openstack.common import threadgroup
+from baryon.openstack.common import eventlet_backdoor
+from baryon.openstack.common.gettextutils import _LE, _LI, _LW
+from baryon.openstack.common import importutils
+from baryon.openstack.common import log as logging
+from baryon.openstack.common import systemd
+from baryon.openstack.common import threadgroup
 
 
-rpc = importutils.try_import('nova.openstack.common.rpc')
+rpc = importutils.try_import('baryon.openstack.common.rpc')
 CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 

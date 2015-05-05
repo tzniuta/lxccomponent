@@ -54,10 +54,10 @@ from __future__ import print_function
 import signal
 import sys
 
-from nova.openstack.common.report.generators import conf as cgen
-from nova.openstack.common.report.generators import threading as tgen
-from nova.openstack.common.report.generators import version as pgen
-from nova.openstack.common.report import report
+from baryon.openstack.common.report.generators import conf as cgen
+from baryon.openstack.common.report.generators import threading as tgen
+from baryon.openstack.common.report.generators import version as pgen
+from baryon.openstack.common.report import report
 
 
 class GuruMeditation(object):

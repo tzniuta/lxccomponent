@@ -25,8 +25,8 @@ such strings specially)
 
 import copy
 
-from nova.openstack.common import jsonutils as json
-import nova.openstack.common.report.utils as utils
+from baryon.openstack.common import jsonutils as json
+import baryon.openstack.common.report.utils as utils
 
 
 class BasicKeyValueView(object):

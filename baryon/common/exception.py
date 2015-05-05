@@ -10,5 +10,10 @@ class BaryonException(Exception):
 
         super(BaryonException, self).__init__(self.emsg)
 
+
 class ConfigNotFound(BaryonException):
     error_msg = "Config File Not Found"
+
+
+class ConfigWrongValue(BaryonException):
+    error_msg = "Wrong Configuration value"

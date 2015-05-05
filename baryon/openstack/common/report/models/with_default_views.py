@@ -14,10 +14,10 @@
 
 import copy
 
-import nova.openstack.common.report.models.base as base_model
-import nova.openstack.common.report.views.json.generic as jsonviews
-import nova.openstack.common.report.views.text.generic as textviews
-import nova.openstack.common.report.views.xml.generic as xmlviews
+import baryon.openstack.common.report.models.base as base_model
+import baryon.openstack.common.report.views.json.generic as jsonviews
+import baryon.openstack.common.report.views.text.generic as textviews
+import baryon.openstack.common.report.views.xml.generic as xmlviews
 
 
 class ModelWithDefaultViews(base_model.ReportModel):

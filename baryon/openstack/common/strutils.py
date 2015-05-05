@@ -24,7 +24,7 @@ import unicodedata
 
 import six
 
-from nova.openstack.common.gettextutils import _
+from baryon.openstack.common.gettextutils import _
 
 
 UNIT_PREFIX_EXPONENT = {

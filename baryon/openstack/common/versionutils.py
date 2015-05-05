@@ -21,8 +21,8 @@ import functools
 
 import pkg_resources
 
-from nova.openstack.common.gettextutils import _
-from nova.openstack.common import log as logging
+from baryon.openstack.common.gettextutils import _
+from baryon.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)

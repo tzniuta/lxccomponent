@@ -18,8 +18,8 @@ This module defines a class representing the data
 model for Openstack package and version information
 """
 
-import nova.openstack.common.report.models.with_default_views as mwdv
-import nova.openstack.common.report.views.text.generic as generic_text_views
+import baryon.openstack.common.report.models.with_default_views as mwdv
+import baryon.openstack.common.report.views.text.generic as generic_text_views
 
 
 class PackageModel(mwdv.ModelWithDefaultViews):

@@ -29,9 +29,9 @@ from eventlet.green import subprocess
 from eventlet import greenthread
 import six
 
-from nova.openstack.common.gettextutils import _
-from nova.openstack.common import log as logging
-from nova.openstack.common import strutils
+from baryon.openstack.common.gettextutils import _
+from baryon.openstack.common import log as logging
+from baryon.openstack.common import strutils
 
 
 LOG = logging.getLogger(__name__)
