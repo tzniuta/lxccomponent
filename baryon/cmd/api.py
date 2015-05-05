@@ -10,6 +10,6 @@ def main():
     config.init(sys.argv)
 
     launcher = service.process_launcher()
-    server = service.WSGIServiceFactory.get_instance('api')
+    server = service.WSGIServiceFactory.get_instance('baryon')
     launcher.launch_service(server, 1)
     launcher.wait()

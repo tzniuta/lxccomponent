@@ -1,7 +1,8 @@
 # Copyright 2015 Cha Dong-Hwi
 
-import os
 from oslo.config import cfg
+
+from baryon.openstack.common import log as logging
 
 core_opts = [
     cfg.StrOpt('bind_host',
@@ -12,7 +13,9 @@ core_opts = [
                 help="The port to bind to"),
     cfg.StrOpt('api_paste_config',
                 default="api-paste.ini",
-                help="The API paste config file to use")
+                help="The API paste config file to use"),
+    cfg.StrOpt('auth_strategy', default='noauth',
+               help=_("The type of authentication to use"))
 ]
 
 CONF = cfg.CONF
@@ -22,16 +25,7 @@ def init(argv):
     # TODO: change version string to pbr function
     CONF(argv[1:], project='baryon', version='0.1')
 
-    load_loggin()
-
-
-def load_loggin():
-
-    # TODO: logging isn't working (why?)
-    from baryon.openstack.common import log as logging
-
+    # FIXME: logging isn't working (why?)
     logging.setup("baryon")
-    LOG = logging.getLogger(__name__)
-    LOG.info("Logging enabled!")
-    LOG.info(_("Logging enabled!"))
-    # print "logging isn't working"
+
+

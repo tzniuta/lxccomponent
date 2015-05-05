@@ -111,6 +111,7 @@ class Server(object):
        self._worker.start()
 
     def stop(self):
+        # FIXME: error on stopping process
         self._worker.stop()
 
     def wait(self):
