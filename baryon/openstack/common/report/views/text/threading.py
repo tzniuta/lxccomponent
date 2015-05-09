@@ -19,7 +19,7 @@ visualizing threads, green threads, and stack traces
 in human-readable form.
 """
 
-import nova.openstack.common.report.views.jinja_view as jv
+import baryon.openstack.common.report.views.jinja_view as jv
 
 
 class StackTraceView(jv.JinjaView):

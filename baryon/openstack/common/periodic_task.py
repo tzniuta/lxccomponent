@@ -17,8 +17,8 @@ import time
 from oslo.config import cfg
 import six
 
-from nova.openstack.common.gettextutils import _, _LE, _LI
-from nova.openstack.common import log as logging
+from baryon.openstack.common.gettextutils import _, _LE, _LI
+from baryon.openstack.common import log as logging
 
 
 periodic_opts = [

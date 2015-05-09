@@ -15,7 +15,7 @@
 
 import fixtures
 
-from nova.openstack.common import lockutils
+from baryon.openstack.common import lockutils
 
 
 class LockFixture(fixtures.Fixture):

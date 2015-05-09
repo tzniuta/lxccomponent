@@ -20,7 +20,7 @@ generators for generating the model in
 :mod:`openstack.common.report.models.version`.
 """
 
-import nova.openstack.common.report.models.version as vm
+import baryon.openstack.common.report.models.version as vm
 
 
 class PackageReportGenerator(object):

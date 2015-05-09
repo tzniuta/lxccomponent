@@ -29,7 +29,7 @@ import xml.etree.ElementTree as ET
 
 import six
 
-import nova.openstack.common.report.utils as utils
+import baryon.openstack.common.report.utils as utils
 
 
 class KeyValueView(object):

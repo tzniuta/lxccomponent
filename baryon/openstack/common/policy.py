@@ -84,10 +84,10 @@ import six
 import six.moves.urllib.parse as urlparse
 import six.moves.urllib.request as urlrequest
 
-from nova.openstack.common import fileutils
-from nova.openstack.common.gettextutils import _, _LE
-from nova.openstack.common import jsonutils
-from nova.openstack.common import log as logging
+from baryon.openstack.common import fileutils
+from baryon.openstack.common.gettextutils import _, _LE
+from baryon.openstack.common import jsonutils
+from baryon.openstack.common import log as logging
 
 
 policy_opts = [

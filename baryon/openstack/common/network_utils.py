@@ -21,8 +21,8 @@ import socket
 
 from six.moves.urllib import parse
 
-from nova.openstack.common.gettextutils import _LW
-from nova.openstack.common import log as logging
+from baryon.openstack.common.gettextutils import _LW
+from baryon.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 

@@ -21,7 +21,7 @@ generators for generating the model in
 
 from oslo.config import cfg
 
-import nova.openstack.common.report.models.conf as cm
+import baryon.openstack.common.report.models.conf as cm
 
 
 class ConfigReportGenerator(object):

@@ -21,8 +21,8 @@ request environment. The request ID is also added to API response.
 
 import webob.dec
 
-from nova.openstack.common import context
-from nova.openstack.common.middleware import base
+from baryon.openstack.common import context
+from baryon.openstack.common.middleware import base
 
 
 ENV_REQUEST_ID = 'openstack.request_id'

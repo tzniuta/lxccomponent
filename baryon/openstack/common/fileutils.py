@@ -18,8 +18,8 @@ import errno
 import os
 import tempfile
 
-from nova.openstack.common import excutils
-from nova.openstack.common import log as logging
+from baryon.openstack.common import excutils
+from baryon.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 
