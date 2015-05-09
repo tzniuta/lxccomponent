@@ -1,19 +1,30 @@
 from oslo.config import cfg
+import webob.dec
+import webob.exc
+import routes.middleware
 
 CONF = cfg.CONF
 
-# TODO: Implement filters: request_id, catch_errors, noauth ..
 
-def pipline_factory(loader, global_conf, **local_conf):
-    pipline = local_conf[CONF.auth_strategy]
-    pipline = pipline.split()
+class Router(object):
 
-    filters = [loader.get_filter(n) for n in pipline[:-1]]
-    app = loader.get_app(pipline[-1])
-    filters.reverse()
-    for filter in filters:
-        app = filter(app)
-    return app
+    @classmethod
+    def factory(cls, global_config, **local_config):
+        return cls()
 
-class Middleware(object):
-    pass
+    def __init__(self, mapper):
+        self.map = mapper
+        self._router = routes.middleware.RoutesMiddleware(self._dispatch, self.map)
+
+    @webob.dec.wsgify
+    def __call__(self, request):
+        return self._router
+
+    @staticmethod
+    @webob.dec.wsgify
+    def _dispatch(request):
+        match = request.environ['wsgiorg.routing_args'][1]
+        if not match:
+            return webob.exc.HTTPNotFound
+        app = match['controller']
+        return app
