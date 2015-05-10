@@ -7,10 +7,10 @@ CONF = cfg.CONF
 
 
 class Router(object):
-
-    @classmethod
-    def factory(cls, global_config, **local_config):
-        return cls()
+    ''' Child Class must implement factory method, and register it to paste.ini
+            @classmethod
+              def factory(cls, global_config, **local_config):
+                 return cls() '''
 
     def __init__(self, mapper):
         self.map = mapper
